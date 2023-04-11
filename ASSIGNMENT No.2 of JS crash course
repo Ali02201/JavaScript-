@@ -1,0 +1,69 @@
+Q1:
+var addFive = addNumberClosure(5);
+console.log(addFive(10)); 
+console.log(addFive(20));
+
+Q2:
+function searchArray(array, value) {
+ 
+  if (array.length === 0) {
+    return false;
+  }
+
+  if (array[0] === value) {
+    return true;
+  } else {
+    return searchArray(array.slice(1), value);
+  }
+}
+
+Q3:
+function addParagraph(text) {
+  let newParagraph = document.createElement('p');
+
+  newParagraph.textContent = text;
+  let body = document.querySelector('body');
+  body.appendChild(newParagraph);
+}
+
+Q4:
+function addListItem(text) {
+  let newListItem = document.createElement('li');
+  newListItem.textContent = text;
+  
+  let unorderedList = document.querySelector('ul');
+  unorderedList.appendChild(newListItem);
+}
+
+Q5:
+  function changeBackgroundColor(element, newColor) {
+  element.style.backgroundColor = newColor;
+}
+
+Q6:
+  function saveToLocalStorage(key, object) {
+  let jsonString = JSON.stringify(object);
+  localStorage.setItem(key, jsonString);
+}
+
+Q7:
+function retrieveFromLocalStorage(key) {
+  let jsonString = localStorage.getItem(key);
+  let object = JSON.parse(jsonString);
+  return object;
+}
+
+Q8:
+function saveObjectToLocalStorage(object) 
+  for (let prop in object) {
+    localStorage.setItem(prop, object[prop]);
+  }
+
+  let retrievedObject = {};
+
+  for (let i = 0; i < localStorage.length; i++) {
+    let prop = localStorage.key(i);
+    retrievedObject[prop] = localStorage.getItem(prop);
+  }
+  return retrievedObject;
+}
