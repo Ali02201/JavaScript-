@@ -1,0 +1,17 @@
+const movies = [
+  {title: 'The Shawshank Redemption', genre: 'Drama', rating: 9.3, releaseYear: 1994},
+  {title: 'The Godfather', genre: 'Crime', rating: 9.2, releaseYear: 1972},
+  {title: 'The Dark Knight', genre: 'Action', rating: 9.0, releaseYear: 2008},
+  {title: 'Pulp Fiction', genre: 'Crime', rating: 8.9, releaseYear: 1994},
+  {title: 'Forrest Gump', genre: 'Drama', rating: 8.8, releaseYear: 1994},
+  {title: 'The Matrix', genre: 'Action', rating: 8.7, releaseYear: 1999},
+];
+
+function getMovieRecommendations(genre, rating, releaseYear) {
+  return movies.filter((movie) => {
+    return movie.genre === genre && movie.rating >= rating && movie.releaseYear >= releaseYear;
+  });
+}
+
+const recommendedMovies = getMovieRecommendations('Drama', 8.0, 1990);
+console.log(recommendedMovies); // [{title: 'The Shawshank Redemption', genre: 'Drama', rating: 9.3, releaseYear: 1994}, {title: 'Forrest Gump', genre: 'Drama', rating: 8.8, releaseYear: 1994}]
